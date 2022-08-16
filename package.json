@@ -1,0 +1,8 @@
+{
+  "name": "auto-room-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Sandy6247/auto-room-api.git",
+  "author": "Sandy Labalette <sandylabalette@gmail.com>",
+  "license": "MIT"
+}
