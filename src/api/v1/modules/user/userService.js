@@ -21,3 +21,15 @@ export const createOne = async (data) => {
 
     return userCreated;
 };
+
+export const readOneById = async (id) => {
+    const userById = await User.findById(id);
+
+    return userById;
+};
+
+export const updateOneById = async () => {
+
+}
+
+

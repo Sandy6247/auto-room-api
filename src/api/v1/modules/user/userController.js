@@ -22,10 +22,17 @@ export const readAll = async (req, res) => {
 };
 
 export const readOneById = async (req, res) => {
-    res.send('Read one user');
+    const id = req.params.id;
+    const userById = await userService.readOneById(id); 
+
+    return res.status(200).json(userById);
 };
 
 export const updateOneById = async (req, res) => {
+    // const id = parseInt(req.params.id);
+    // const userUpdated = await userService.updateOneById(id); 
+
+    // return res.status(200).json(userUpdated);
     res.send('Uptade one user');
 };
 
