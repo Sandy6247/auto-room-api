@@ -1,9 +1,24 @@
+import * as userService from './userService.js';
+import createUserDTO from './dto/user.create.dto.js';
+
 export const createOne = async (req, res) => {
-    res.send('User created');
+    const data = req.body;
+
+    const validatorSchema = createUserDTO(req.body);
+    if (validatorSchema.error) {
+
+        return res.status(400).json(validatorSchema.error.details[0].message);        
+    };
+
+    const userCreated = await userService.createOne(data);
+    
+    return res.status(201).json(userCreated);
 };
 
-export const readAll = async (req, res) => {
-    res.send('All users');
+export const readAll = async (req, res) => {    
+    const users = await userService.readAll(); 
+
+    return res.status(200).json(users);
 };
 
 export const readOneById = async (req, res) => {
