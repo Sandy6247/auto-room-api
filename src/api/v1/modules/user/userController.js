@@ -37,6 +37,9 @@ export const updateOneById = async (req, res) => {
 };
 
 export const deleteOneById = async (req, res) => {
-    res.send('Delete one user');
+    const id = req.params.id;
+    const userDeleted = await userService.deleteOneById(id);
+
+    return res.status(200).json(userDeleted);
 };
 

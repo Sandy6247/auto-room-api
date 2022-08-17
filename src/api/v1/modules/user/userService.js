@@ -34,3 +34,9 @@ export const updateOneById = async (id, data) => {
 
     return userUpdated;
 }
+
+export const deleteOneById = async (id) => {
+    const userDeleted = await User.findByIdAndDelete(id);
+
+    return userDeleted;
+}
