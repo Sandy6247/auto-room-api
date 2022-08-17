@@ -28,8 +28,9 @@ export const readOneById = async (id) => {
     return userById;
 };
 
-export const updateOneById = async () => {
+export const updateOneById = async (id, data) => {
+    const {firstName, lastName, email, password, phone, birthDate, nationality} = data;
+    const userUpdated = await User.findByIdAndUpdate(id, data);
 
+    return userUpdated;
 }
-
-

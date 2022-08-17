@@ -29,13 +29,14 @@ export const readOneById = async (req, res) => {
 };
 
 export const updateOneById = async (req, res) => {
-    // const id = parseInt(req.params.id);
-    // const userUpdated = await userService.updateOneById(id); 
+    const data = req.body;
+    const id = req.params.id;
+    const userUpdated = await userService.updateOneById(id, data); 
 
-    // return res.status(200).json(userUpdated);
-    res.send('Uptade one user');
+    return res.status(200).json(userUpdated);
 };
 
 export const deleteOneById = async (req, res) => {
     res.send('Delete one user');
 };
+
