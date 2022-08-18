@@ -14,7 +14,6 @@ router.route('/users')
     ])
 
 router.route('/users/:id')
-
     .get([
         userController.readOneById
     ])
