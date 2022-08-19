@@ -15,7 +15,7 @@ export const readAll = async (req, res) => {
 };
 
 export const readOneById = async (req, res) => {
-    const id = req.params.id;
+    const { id } = req.params;
 
     const apartmentById = await apartmentService.readOneById(id);
 
@@ -23,7 +23,7 @@ export const readOneById = async (req, res) => {
 };
 
 export const updateOneById = async (req, res) => {
-    const id = req.params.id;
+    const { id } = req.params;
     const data = req.body;
 
     const apartmentUpdated = await apartmentService.updateOneById(id, data);
@@ -32,7 +32,7 @@ export const updateOneById = async (req, res) => {
 };
 
 export const deleteOneById = async (req, res) => {
-    const id = req.params.id;
+    const { id } = req.params;
 
     const apartmentDeleted = await apartmentService.deleteOneById(id);
 

@@ -26,8 +26,6 @@ export const readOneById = async (id) => {
 }
 
 export const updateOneById = async (id, data) => {
-    const { name, street, zipCode, city } = data;
-
     const apartmentUpdated = await Apartment.findByIdAndUpdate(id, data);
 
     return apartmentUpdated;

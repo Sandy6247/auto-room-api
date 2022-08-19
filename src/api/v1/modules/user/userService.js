@@ -28,8 +28,13 @@ export const readOneById = async (id) => {
     return userById;
 };
 
+export const readOne = async (data, selectedFields = null) => {
+    const userFound = await User.findOne(data).select(selectedFields);
+
+    return userFound;
+};
+
 export const updateOneById = async (id, data) => {
-    const {firstName, lastName, email, password, phone, birthDate, nationality} = data;
     const userUpdated = await User.findByIdAndUpdate(id, data);
 
     return userUpdated;

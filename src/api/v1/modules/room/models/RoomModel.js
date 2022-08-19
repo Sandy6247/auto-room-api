@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+//import Apartment from "../../apartment/models/apartmentModel.js"
 
 const Schema = mongoose.Schema;
 
@@ -25,7 +26,10 @@ const RoomSchema = new Schema({
         alias: 'i',
         trim: true,
     },
-    //une référence vers l'appartement dans laquelle elle se situe
+    apartment: {
+        type: Schema.Types.ObjectId,
+        ref: 'Apartment',
+    },
 
 })
 
